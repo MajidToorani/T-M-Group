@@ -175,12 +175,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="index.html">HOME</a>
                     </li>
-                    <li class="nav-item dropdown" id="shopByCategory">
-                        <a class="nav-link dropdown-toggle hideShop" data-toggle="dropdown" href="">SHOP BY CATEGORY</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hideShop" data-toggle="dropdown" href="page-categories.html">SHOP BY CATEGORY</a>
                         <div class="dropdown-menu" id="categoryList"></div>
                     </li>
-                    <li class="nav-item dropdown" class='hideShop'>
-                        <a class="nav-link dropdown-toggle hideShop" data-toggle="dropdown" href="">SHOP BY MANUFACTURER</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hideShop" data-toggle="dropdown" href="#">SHOP BY MANUFACTURER</a>
                         <div class="dropdown-menu" id="manufacturerList"></div>
                     </li>
                     <li class="nav-item">
@@ -221,8 +221,10 @@
             <nav>
                 <ol class="breadcrumb text-white">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="page-manufacturers.html">Shop by manufacturer</a></li>
-                    <!-- <li class="breadcrumb-item active" aria-current="page">Manufacturer 1</li> -->
+                    <li class="breadcrumb-item" aria-current="page"><a href="page-manufacturers.html">Shop by manufacturer</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="manufacturerName">
+                        <a></a>
+                    </li>
                 </ol>
             </nav>
         </div>
@@ -270,7 +272,7 @@
                                 </div>
                                 <!-- card-body.// -->
                             </div>
-                       <!--  </article>                       
+                            <!--  </article>                       
                         <article class="filter-group">
                             <header class="card-header">
                                 <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
@@ -314,100 +316,100 @@
                             </div>
                         </article>
                        -->
-                        <article class="filter-group">
-                            <header class="card-header">
-                                <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
-                                    <i class="icon-control fa fa-chevron-down"></i>
-                                    <h6 class="title">Price range </h6>
-                                </a>
-                            </header>
-                            <div class="filter-content collapse show" id="collapse_3">
-                                <div class="card-body">
-                                    <input type="range" class="custom-range" min="0" max="100" name="">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                            <label>Min</label>
-                                            <input class="form-control" placeholder="$0" type="number">
+                            <article class="filter-group">
+                                <header class="card-header">
+                                    <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+                                        <i class="icon-control fa fa-chevron-down"></i>
+                                        <h6 class="title">Price range </h6>
+                                    </a>
+                                </header>
+                                <div class="filter-content collapse show" id="collapse_3">
+                                    <div class="card-body">
+                                        <input type="range" class="custom-range" min="0" max="100" name="">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label>Min</label>
+                                                <input class="form-control" placeholder="$0" type="number">
+                                            </div>
+                                            <div class="form-group text-right col-md-6">
+                                                <label>Max</label>
+                                                <input class="form-control" placeholder="$1,0000" type="number">
+                                            </div>
                                         </div>
-                                        <div class="form-group text-right col-md-6">
-                                            <label>Max</label>
-                                            <input class="form-control" placeholder="$1,0000" type="number">
-                                        </div>
+                                        <!-- form-row.// -->
+                                        <button class="btn btn-block btn-primary">Apply</button>
                                     </div>
-                                    <!-- form-row.// -->
-                                    <button class="btn btn-block btn-primary">Apply</button>
+                                    <!-- card-body.// -->
                                 </div>
-                                <!-- card-body.// -->
-                            </div>
-                        </article>
-                        <!-- filter-group .// -->
-                        <article class="filter-group">
-                            <header class="card-header">
-                                <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
-                                    <i class="icon-control fa fa-chevron-down"></i>
-                                    <h6 class="title">Sizes </h6>
-                                </a>
-                            </header>
-                            <div class="filter-content collapse show" id="collapse_4">
-                                <div class="card-body">
-                                    <label class="checkbox-btn">
+                            </article>
+                            <!-- filter-group .// -->
+                            <article class="filter-group">
+                                <header class="card-header">
+                                    <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
+                                        <i class="icon-control fa fa-chevron-down"></i>
+                                        <h6 class="title">Sizes </h6>
+                                    </a>
+                                </header>
+                                <div class="filter-content collapse show" id="collapse_4">
+                                    <div class="card-body">
+                                        <label class="checkbox-btn">
                                         <input type="checkbox">
                                         <span class="btn btn-light"> XS </span>
                                     </label>
 
-                                    <label class="checkbox-btn">
+                                        <label class="checkbox-btn">
                                         <input type="checkbox">
                                         <span class="btn btn-light"> SM </span>
                                     </label>
 
-                                    <label class="checkbox-btn">
+                                        <label class="checkbox-btn">
                                         <input type="checkbox">
                                         <span class="btn btn-light"> LG </span>
                                     </label>
 
-                                    <label class="checkbox-btn">
+                                        <label class="checkbox-btn">
                                         <input type="checkbox">
                                         <span class="btn btn-light"> XXL </span>
                                     </label>
+                                    </div>
+                                    <!-- card-body.// -->
                                 </div>
-                                <!-- card-body.// -->
-                            </div>
-                        </article>
-                        <!-- filter-group .// -->
-                        <article class="filter-group">
-                            <header class="card-header">
-                                <a href="#" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" class="">
-                                    <i class="icon-control fa fa-chevron-down"></i>
-                                    <h6 class="title">More filter </h6>
-                                </a>
-                            </header>
-                            <div class="filter-content collapse in" id="collapse_5">
-                                <div class="card-body">
-                                    <label class="custom-control custom-radio">
+                            </article>
+                            <!-- filter-group .// -->
+                            <article class="filter-group">
+                                <header class="card-header">
+                                    <a href="#" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" class="">
+                                        <i class="icon-control fa fa-chevron-down"></i>
+                                        <h6 class="title">More filter </h6>
+                                    </a>
+                                </header>
+                                <div class="filter-content collapse in" id="collapse_5">
+                                    <div class="card-body">
+                                        <label class="custom-control custom-radio">
                                         <input type="radio" name="my_filter_radio" checked=""
                                             class="custom-control-input">
                                         <div class="custom-control-label">Any condition</div>
                                     </label>
 
-                                    <label class="custom-control custom-radio">
+                                        <label class="custom-control custom-radio">
                                         <input type="radio" name="my_filter_radio" class="custom-control-input">
                                         <div class="custom-control-label">Brand new </div>
                                     </label>
 
-                                    <label class="custom-control custom-radio">
+                                        <label class="custom-control custom-radio">
                                         <input type="radio" name="my_filter_radio" class="custom-control-input">
                                         <div class="custom-control-label">Used items</div>
                                     </label>
 
-                                    <label class="custom-control custom-radio">
+                                        <label class="custom-control custom-radio">
                                         <input type="radio" name="my_filter_radio" class="custom-control-input">
                                         <div class="custom-control-label">Very old</div>
                                     </label>
+                                    </div>
+                                    <!-- card-body.// -->
                                 </div>
-                                <!-- card-body.// -->
-                            </div>
-                        </article>
-                        <!-- filter-group .// -->
+                            </article>
+                            <!-- filter-group .// -->
                     </div>
                     <!-- card.// -->
 
@@ -427,7 +429,7 @@
                             <div class="btn-group">
                                 <a href="#" class="btn btn-outline-secondary" data-toggle="tooltip" title="List view">
                                     <i class="fa fa-bars"></i></a>
-                                <a href="#" class="btn  btn-outline-secondary active" data-toggle="tooltip" title="Grid view">
+                                <a href="#" class="btn btn-outline-secondary active" data-toggle="tooltip" title="Grid view">
                                     <i class="fa fa-th"></i></a>
                             </div>
                         </div>
@@ -438,13 +440,13 @@
                     <!-- row end.// -->
 
 
-                    <!-- <nav class="mt-4 " aria-label="Page navigation sample ">
-                        <ul class="pagination ">
-                            <li class="page-item disabled "><a class="page-link " href="# ">Previous</a></li>
-                            <li class="page-item active "><a class="page-link " href="# ">1</a></li>
-                            <li class="page-item "><a class="page-link " href="# ">2</a></li>
-                            <li class="page-item "><a class="page-link " href="# ">3</a></li>
-                            <li class="page-item "><a class="page-link " href="# ">Next</a></li>
+                    <!-- <nav class="mt-4" aria-label="Page navigation sample">
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
                         </ul>
                     </nav> -->
 
@@ -459,9 +461,9 @@
     <!-- ========================= SECTION CONTENT END// ========================= -->
 
     <!-- ========================= FOOTER ========================= -->
-    <footer class="section-footer border-top padding-y ">
-        <div class="container ">
-            <p class="text-center ">
+    <footer class="section-footer border-top padding-y">
+        <div class="container">
+            <p class="text-center">
                 &copy T&M Group Copyright 2021 All rights reserved
             </p>
         </div>

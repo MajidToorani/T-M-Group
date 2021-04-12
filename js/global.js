@@ -37,6 +37,7 @@ function btnMinus_click() {
 function updateAllList_show() {
     UpdatePopularProduct();
     UpdateNavManufacturerList();
+    AllManufacturers();
     UpdateNavCategoryList();
     UpdateLeftMenuCategory();
     UpdateDropdownCategory();
@@ -51,20 +52,17 @@ function updateAllList_show() {
 function init() {
     console.info("DOM is ready");
 
-    $('#shopByCategory').click(function() {
+    /* $('#shopByCategory').click(function() {
+       window.location.replace("page-category-grid.html");
+    });  
+ */
+    /*  $('#shopByManufacturer').click(function() {
         var accountType = localStorage.getItem('accountType');
         if (accountType !== 'Manufacturer') {
-            window.location.replace("page-category-grid.html");
+            window.location.replace("page-manufacturers.html");
         }
     });
-
-    $('#shopByManufacturer').click(function() {
-        var accountType = localStorage.getItem('accountType');
-        if (accountType !== 'Manufacturer') {
-            window.location.replace("page-manufacturer-grid.html");
-        }
-    });
-
+ */
     $('#customCheck1').click(function() {
         if ($('#submitBtn').is(':disabled')) {
             $('#submitBtn').removeAttr('disabled');

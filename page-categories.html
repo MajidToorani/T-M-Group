@@ -43,6 +43,11 @@
             localStorage.clear();
         }
 
+        function updateThisProductList() {
+            $('#allCategories').hide();
+            $("#categoryName").text(localStorage.getItem("categoryName"));
+        }
+
         function selectYourLoginType() {
             var select = prompt("What's your account type? 1 - Supplier or 2 - Manufacturer", "");
             switch (select) {
@@ -95,6 +100,8 @@
             if (localStorage.getItem("accountType") !== "Supplier") {
                 $('#hideCart').hide();
             }
+
+            $(".categoryName").on("click", updateThisProductList);
         });
         // jquery end
     </script>
@@ -119,8 +126,8 @@
                                 <input type="text" class="form-control" placeholder="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
-										<i class="fa fa-search"></i> Search
-									</button>
+                                        <i class="fa fa-search"></i> Search
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -131,12 +138,11 @@
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3" id="hideCart">
                                 <a href="page-shopping-cart.html" class="icon icon-sm rounded-circle border"><i
-										class="fa fa-shopping-cart"></i></a>
+                                        class="fa fa-shopping-cart"></i></a>
                                 <span class="badge badge-pill badge-danger notify" id="ordersNumber">0</span>
                             </div>
                             <div class="widget-header icontext">
-                                <a href="page-profile-main.html" class="icon icon-sm rounded-circle border" id="userProfile"><i
-										class="fa fa-user"></i></a>
+                                <a href="page-profile-main.html" class="icon icon-sm rounded-circle border" id="userProfile"><i class="fa fa-user"></i></a>
                                 <div class="text">
                                     <span class="text-muted">Welcome!</span>
                                     <span class="userProfile"></span>
@@ -168,21 +174,21 @@
         <div class="container">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="main_nav">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="index.html">HOME</a>
                     </li>
-                    <li class="nav-item dropdown" id="shopByCategory">
-                        <a class="nav-link hideShop" data-toggle="dropdown" href="">SHOP BY CATEGORY</a>
-                        <!-- <div class="dropdown-menu" id="categoryList"></div> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hideShop" data-toggle="dropdown" href="#">SHOP BY CATEGORY</a>
+                        <div class="dropdown-menu" id="categoryList"></div>
                     </li>
-                    <li class="nav-item dropdown" id="shopByManufacturer">
-                        <a class="nav-link hideShop" data-toggle="dropdown" href="">SHOP BY MANUFACTURER</a>
-                        <!-- <div class="dropdown-menu" id="manufacturerList"></div> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hideShop" href="page-manufacturers.html">SHOP BY MANUFACTURER</a>
+                        <div class="dropdown-menu" id="manufacturerList"></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="page-pricing.html">PRICING</a>
@@ -221,7 +227,10 @@
             <nav>
                 <ol class="breadcrumb text-white">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Shop by category</li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="page-categories.html">Shop by category</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" id="categoryName">
+                        <a></a>
+                    </li>
                 </ol>
             </nav>
         </div>
@@ -232,23 +241,19 @@
     <!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
         <div class="container">
-
-            <nav class="row">
+            <div class="row" id="productList"></div>
+            <div class="row" id="allCategories">
                 <div class="col-md-3">
 
                     <div class="card card-category">
                         <div class="img-wrap" style="background: #ffd7d7">
-                            <img src="images/items/1.jpg">
+                            <img src="images/items/Appliance.jpg">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="page-category-grid.html">Home Appliances</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(1);">Appliances</a>
+                            </h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -257,17 +262,12 @@
                 <div class="col-md-3">
                     <div class="card card-category">
                         <div class="img-wrap" style="background: #FFF68D">
-                            <img src="images/items/2.jpg">
+                            <img src="images/items/Autoparts.jpg">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="#">Vehicles & Accessories</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(2);">Autoparts</a></h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -276,17 +276,12 @@
                 <div class="col-md-3">
                     <div class="card card-category">
                         <div class="img-wrap" style="background: #bcffb8">
-                            <img src="images/items/3.jpg">
+                            <img src="images/items/Furnitutre.jpg">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="#">Furniture</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(3);">Furniture</a></h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -295,17 +290,12 @@
                 <div class="col-md-3">
                     <div class="card card-category">
                         <div class="img-wrap" style="background: #c9fff3">
-                            <img src="images/items/4.jpg">
+                            <img src="images/items/Electronic.jpg">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="#">Consumer Electronics</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(4);">Electronics</a></h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -314,17 +304,12 @@
                 <div class="col-md-3">
                     <div class="card card-category">
                         <a href="#" class="img-wrap" style="background: #ddffeb">
-                            <img src="images/items/5.jpg">
+                            <img src="images/items/Jewelry.jpg">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="#">Jewelry</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(5);">Jewelries</a></h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -333,17 +318,12 @@
                 <div class="col-md-3">
                     <div class="card card-category">
                         <a href="#" class="img-wrap" style="background: #dee4ff">
-                            <img src="images/items/6.jpg">
+                            <img src="images/items/Beauty.jpg">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="#">Beauty & Personal Care</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(6);">Beauties</a></h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -352,17 +332,12 @@
                 <div class="col-md-3">
                     <div class="card card-category">
                         <a href="#" class="img-wrap" style="background: #ddffeb">
-                            <img src="images/items/2.jpg">
+                            <img src="images/items/Clothes.jpg">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="#">Clothing</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(7);">Clothes</a></h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -371,23 +346,18 @@
                 <div class="col-md-3">
                     <div class="card card-category">
                         <a href="#" class="img-wrap" style="background: #dee4ff">
-                            <img src="images/items/1.jpg">
+                            <img src="images/items/Books.jpg">
                         </a>
                         <div class="card-body">
-                            <h4 class="card-title"><a href="#">Health & Medical</a></h4>
+                            <h4 class="card-title"><a class="categoryName" href="#" onclick="UpdateProductList(8);">Books</a></h4>
                             <ul class="list-menu">
-                                <li><a href="">Item 1</a></li>
-                                <li><a href="">Item 2</a></li>
-                                <li><a href="">Item 3</a></li>
-                                <li><a href="">Item 4</a></li>
-                                <li><a href="">Item 5</a></li>
-                                <li><a href="">Item 6</a></li>
+                                <!--<li><a href="">Item 1</a></li>-->
                             </ul>
                         </div>
                     </div>
                 </div>
                 <!-- col.// -->
-            </nav>
+            </div>
             <!-- row.// -->
 
 
@@ -414,7 +384,7 @@
                         <!-- col.// -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i>
-								Subscribe </button>
+                                Subscribe </button>
                         </div>
                         <!-- col.// -->
                     </form>

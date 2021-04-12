@@ -170,7 +170,7 @@ var DB = {
                 " INSERT INTO categories(name, description) VALUES('Jewelries', 'neckless-earing-bracelet');",
                 " INSERT INTO categories(name, description) VALUES('Beauties', 'makeup-skin care');",
                 " INSERT INTO categories(name, description) VALUES('Clothes', 'shirts-pants-jeans-coats');",
-                " INSERT INTO categories(name, description) VALUES('Health', 'vitamins-sanitizers-masks');"
+                " INSERT INTO categories(name, description) VALUES('Books', 'Action and Adventure-Classics-Comic or Garphic Novel-Historical Fiction-Horror');"
             ];
 
             for (var i = 0; i < sqlInsertCategories.length; i++) {
