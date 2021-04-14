@@ -61,9 +61,9 @@ var DB = {
             var sqlCreateUser = "CREATE TABLE IF NOT EXISTS suppliers(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "accountType VARCHAR(20) NOT NULL," +
-                "firstName VARCHAR(30) NOT NULL," +
-                "lastName VARCHAR(30) NOT NULL," +
-                "countryCode VARCHAR(3) NOT NULL," +
+                "firstName VARCHAR(50) NOT NULL," +
+                "lastName VARCHAR(50) NOT NULL," +
+                "countryCode VARCHAR(5) NOT NULL," +
                 "phoneNumber VARCHAR(10) NOT NULL," +
                 "userEmail VARCHAR(50) NOT NULL," +
                 "city VARCHAR(20) NOT NULL," +
@@ -79,7 +79,7 @@ var DB = {
                 "manufacturerId INTEGER NOT NULL," +
                 "categoryId INTEGER NOT NULL," +
                 "image BLOB," +
-                "name VARCHAR(30) NOT NULL," +
+                "name VARCHAR(50) NOT NULL," +
                 "price INT NOT NULL," +
                 "description VARCHAR(100) NOT NULL," +
                 "FOREIGN KEY(manufacturerId) REFERENCES manufacturers(id)," +
@@ -91,15 +91,15 @@ var DB = {
             var sqlManufacturer = "CREATE TABLE IF NOT EXISTS manufacturers(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "accountType VARCHAR(20) NOT NULL," +
-                "firstName VARCHAR(30) NOT NULL," +
-                "lastName VARCHAR(30) NOT NULL," +
-                "companyName VARCHAR(30) NOT NULL," +
-                "companyUrl VARCHAR(20)," +
+                "firstName VARCHAR(50) NOT NULL," +
+                "lastName VARCHAR(50) NOT NULL," +
+                "companyName VARCHAR(50) NOT NULL," +
+                "companyUrl VARCHAR(50)," +
                 "bnNumber VARCHAR(30) NOT NULL," +
                 "contactTitle VARCHAR(30)," +
-                "contactFName VARCHAR(30) NOT NULL," +
-                "contactLName VARCHAR(30) NOT NULL," +
-                "countryCode VARCHAR(3) NOT NULL," +
+                "contactFName VARCHAR(50) NOT NULL," +
+                "contactLName VARCHAR(50) NOT NULL," +
+                "countryCode VARCHAR(5) NOT NULL," +
                 "phoneNumber VARCHAR(20) NOT NULL," +
                 "cFaxNumber VARCHAR(20)," +
                 "userEmail VARCHAR(50) NOT NULL," +
@@ -141,7 +141,7 @@ var DB = {
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                 "supplierId INTEGER NOT NULL," +
                 "image BLOB," +
-                "name VARCHAR(30) NOT NULL," +
+                "name VARCHAR(50) NOT NULL," +
                 "price INT NOT NULL," +
                 "description VARCHAR(100) NOT NULL," +
                 "quantity INT NOT NULL," +
@@ -158,7 +158,7 @@ var DB = {
             console.info("Creating Table: categories...");
             var sqlCategory = "CREATE TABLE IF NOT EXISTS categories(" +
                 "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-                "name VARCHAR(20) NOT NULL," +
+                "name VARCHAR(50) NOT NULL," +
                 "description VARCHAR(200) NOT NULL);";
             tx.executeSql(sqlCategory, options, successCreate, errorHandler);
 

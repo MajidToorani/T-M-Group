@@ -6,11 +6,11 @@ function DoValidate_frmAdd() {
         rules: {
             firstName: {
                 required: true,
-                rangelength: [2, 10]
+                rangelength: [2, 20]
             },
             lastName: {
                 required: true,
-                rangelength: [2, 10]
+                rangelength: [2, 20]
             },
             phoneNumber: {
                 required: true,
@@ -41,11 +41,11 @@ function DoValidate_frmAdd() {
         messages: {
             firstName: {
                 required: "first name is required",
-                rangelength: "Length must be between 2 and 10 letters"
+                rangelength: "Length must be between 2 and 20 letters"
             },
             lastName: {
                 required: "last name is required",
-                rangelength: "Length must be between 2 and 10 letters"
+                rangelength: "Length must be between 2 and 20 letters"
             },
             phoneNumber: {
                 required: "phone number is required",
@@ -111,11 +111,11 @@ function DoValidate_frmManufacturer() {
         rules: {
             firstName: {
                 required: true,
-                rangelength: [2, 10]
+                rangelength: [2, 20]
             },
             lastName: {
                 required: true,
-                rangelength: [2, 10]
+                rangelength: [2, 20]
             },
             companyName: {
                 required: true,
@@ -169,11 +169,11 @@ function DoValidate_frmManufacturer() {
         messages: {
             firstName: {
                 required: "first name is required",
-                rangelength: "Length must be between 2 and 10 letters"
+                rangelength: "Length must be between 2 and 20 letters"
             },
             lastName: {
                 required: "last name is required",
-                rangelength: "Length must be between 2 and 10 letters"
+                rangelength: "Length must be between 2 and 20 letters"
             },
             companyName: {
                 required: "company name is required"
@@ -260,11 +260,11 @@ function DoValidate_frmUpdateSetting() {
         rules: {
             settingFirstName: {
                 required: true,
-                rangelength: [2, 10]
+                rangelength: [2, 20]
             },
             lastName: {
                 required: true,
-                rangelength: [2, 10]
+                rangelength: [2, 20]
             },
             phoneNumber: {
                 required: true,
@@ -289,11 +289,11 @@ function DoValidate_frmUpdateSetting() {
         messages: {
             settingFirstName: {
                 required: "first name is required",
-                rangelength: "Length must be between 2 and 10 letters"
+                rangelength: "Length must be between 2 and 20 letters"
             },
             lastName: {
                 required: "last name is required",
-                rangelength: "Length must be between 2 and 10 letters"
+                rangelength: "Length must be between 2 and 20 letters"
             },
             phoneNumber: {
                 required: "phone number is required",

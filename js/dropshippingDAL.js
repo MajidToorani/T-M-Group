@@ -49,6 +49,27 @@ var SignupSupplier = {
         db.transaction(txFunction, errorHandler, successTransaction);
     },
 
+    existSupplier: function(callback, options) {
+        function successTransaction() {
+            console.info("Success: Transaction exist successful");
+        }
+
+        function successRegistered() {
+            console.info("Success: Existence successful");
+            alert("Supplier exists!");
+        }
+
+        function txFunction(tx) {
+            console.info("Selecting a Supplier...  ");
+            var sql = "SELECT * FROM suppliers WHERE userEmail=?;";
+
+            tx.executeSql(sql, options, callback, errorHandler);
+            console.info("Supplier found...");
+        }
+
+        db.transaction(txFunction, errorHandler, successTransaction);
+    },
+
     selectAll: function(callback) {
         var options = [];
 

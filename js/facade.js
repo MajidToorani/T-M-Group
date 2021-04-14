@@ -1,26 +1,77 @@
 function RegisterSupplier() {
     console.info("Entering RegisterSupplier");
-    if (DoValidate_frmAdd()) {
-        console.info("Supplier Registration Form Validation is successful.");
-        var accountType = $("#accountType").text();
-        var firstName = $("#firstName").val();
-        var lastName = $("#lastName").val();
-        var countryCode = $("#countryCode option:selected").val();
-        var phoneNumber = $("#phoneNumber").val();
-        var userEmail = $("#userEmail").val();
-        var city = $("#city").val();
-        var country = $("#country").val();
-        var addressDetails = $("#addressDetails").val();
-        var password = $("#password").val();
-
-        var options = [];
-        options = [accountType, firstName, lastName, countryCode, phoneNumber, userEmail, city, country, addressDetails, password];
-
-        SignupSupplier.supplierInsert(options);
-
-    } else {
+    if (!DoValidate_frmAdd()) {
         console.error("Registration form Validation failed.");
+    } else {
+        console.info("Supplier Registration Form Validation is successful.");
+
+        var type = $("#accountType").text().trim();
+        var fName = $("#firstName").val().trim();
+        var lName = $("#lastName").val().trim();
+        var countryCode = $("#countryCode option:selected").val().trim();
+        var phoneNumber = $("#phoneNumber").val().trim();
+        var userEmail = $("#userEmail").val().trim();
+        var city = $("#city").val().trim();
+        var country = $("#country option:selected").val().trim();
+        var addressDetails = $("#addressDetails").val().trim();
+        var password = $("#password").val().trim();
+
+        localStorage.setItem("type", type);
+        localStorage.setItem("fName", fName);
+        localStorage.setItem("lName", lName);
+        localStorage.setItem("countryCode", countryCode);
+        localStorage.setItem("phoneNumber", phoneNumber);
+        localStorage.setItem("userEmail", userEmail);
+        localStorage.setItem("city", city);
+        localStorage.setItem("country", country);
+        localStorage.setItem("addressDetails", addressDetails);
+        localStorage.setItem("password", password);
+
+        var options = [userEmail];
+
+        function callback(tx, results) {
+            if (results.rows.length > 0) {
+                var row = results.rows[0];
+                console.info("Lookup email existence");
+
+                var userEmail = localStorage.getItem("userEmail");
+
+                if (row['userEmail'] === userEmail) {
+                    var name = row['firstName'];
+
+                    alert(name + "! your account is already registered!");
+                }
+            }
+
+            if (results.rows.length === 0) {
+                var firstName = localStorage.getItem("fName");
+
+                alert(firstName + " your account is not registered!");
+                alert("Confirm to submit your application!");
+            }
+        }
+
+        InsertSupplier();
+        SignupSupplier.existSupplier(callback, options);
     }
+}
+
+function InsertSupplier() {
+    var accountType = localStorage.getItem("type");
+    var firstName = localStorage.getItem("fName");
+    var lastName = localStorage.getItem("lName");
+    var countryCode = localStorage.getItem("countryCode");
+    var phoneNumber = localStorage.getItem("phoneNumber");
+    var userEmail = localStorage.getItem("userEmail");
+    var city = localStorage.getItem("city");
+    var country = localStorage.getItem("country");
+    var addressDetails = localStorage.getItem("addressDetails");
+    var password = localStorage.getItem("password");
+
+    var options = [];
+    options = [accountType, firstName, lastName, countryCode, phoneNumber, userEmail, city, country, addressDetails, password];
+
+    SignupSupplier.supplierInsert(options);
 }
 
 function LogInSupplier() {
