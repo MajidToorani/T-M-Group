@@ -177,6 +177,19 @@ var DB = {
                 tx.executeSql(sqlInsertCategories[i], options, successInsert, errorHandler);
 
             }
+         
+            // Create table wish list
+            console.info("Creating Table: wish list...");
+            var sqlWishlist = "CREATE TABLE IF NOT EXISTS wishList(" +
+                "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "supplierId INTEGER NOT NULL," +
+                "image BLOB," +
+                "name VARCHAR(50) NOT NULL," +
+                "price INT NOT NULL," +
+                "description VARCHAR(100) NOT NULL," +
+                "FOREIGN KEY(supplierId) REFERENCES suppliers(id));";
+            tx.executeSql(sqlWishlist, options, successCreate, errorHandler);
+
         }
 
         db.transaction(txFunction, errorHandler, successTransaction);

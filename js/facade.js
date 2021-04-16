@@ -360,6 +360,9 @@ function UpdateProductList(categoryId) {
                 "&nbsp;&nbsp;<del class='price-old' style='color:red;'>" + row['price'] * 1.50 + "</del>" +
                 "</div><!-- price-wrap.// -->" +
                 "</div>" +
+                "<a href='#' class='btn btn-light btn-block' onclick='SaveToWishlist(" + row['id'] + ")'>" + "<i class='fa fa-heart'>" + "</i>" +
+                "<span class='text'>" + "Add to Wish List" + "</span>" +
+                "</a>" +
                 "<a href='#' class='btn btn-block btn-primary' onclick='SaveOrder(" + row['id'] + ")'>" + "Add to cart" + "</a>" +
                 "</figcaption>" +
                 "</figure>" +
@@ -541,6 +544,9 @@ function UpdateManufacturerProductList(manufacturerId) {
                 "&nbsp;&nbsp;<del class='price-old' style='color:red;'>" + row['price'] * 1.50 + "</del>" +
                 "</div><!-- price-wrap.// -->" +
                 "</div>" +
+                "<a href='#' class='btn btn-light btn-block' onclick='SaveToWishlist(" + row['id'] + ")'>" + "<i class='fa fa-heart'>" + "</i>" +
+                "<span class='text'>" + "Add to Wish List" + "</span>" +
+                "</a>" +
                 "<a href='#' class='btn btn-block btn-primary' onclick='SaveOrder(" + row['id'] + ")'>" + "Add to cart" + "</a>" +
                 "</figcaption>" +
                 "</figure>" +
@@ -898,23 +904,6 @@ function UpdateRecentOrders() {
     SaveOrderInfo.selectSupplier(callback, options);
 }
 
-function UpdateTotalOrders() {
-    var supplierId = localStorage.getItem("supplierId");
-    var options = [supplierId];
-    var orderNumbers = 0;
-
-    function callback(tx, results) {
-
-        if (results.rows.length !== 0) {
-            orderNumbers = results.rows.length;
-            var totalOrder = $("#totalOrders");
-            totalOrder = totalOrder.text(orderNumbers);
-        }
-    }
-
-    SaveOrderInfo.selectSupplier(callback, options);
-}
-
 function UpdateMyAddress() {
     if (localStorage.getItem("supplierId") !== null) {
         var supplierId = localStorage.getItem("supplierId");
@@ -1019,6 +1008,9 @@ function UpdateMyOrders() {
             var ordersNumber = $('#ordersNumber');
             ordersNumber = ordersNumber.text(ordersNum);
 
+            var totalOrders = $('#totalOrders');
+            totalOrders = totalOrders.text(ordersNum);
+
             var myOrderId = $("#orderId");
             myOrderId = myOrderId.text("Order ID: " + localStorage.getItem("supplierId") + Date.now());
 
@@ -1114,4 +1106,83 @@ function DeleteOrder(orderId) {
     console.info(orderId);
 
     SaveOrderInfo.orderDelete(options);
+}
+
+function SaveToWishlist(id) {
+
+    console.info("Save Wish List method");
+
+    if (localStorage.getItem("supplierId") === null) {
+        alert("Please sign in first as Supplier!")
+    } else {
+        var supplierId = localStorage.getItem("supplierId");
+
+        var options = [id];
+
+        function callback(tx, results) {
+
+            for (var i = 0; i < results.rows.length; i++) {
+                var row = results.rows[i];
+
+                var image = row['image'];
+                var name = row['name'];
+                var price = row['price'];
+                var description = row['description'];
+            }
+
+            var wishOptions = [];
+            wishOptions = [supplierId, image, name, price, description];
+
+            SaveWishlist.productInsert(wishOptions);
+        }
+
+        SaveProductInfo.selectProduct(callback, options);
+    }
+}
+
+function UpdateWishList() {
+    function callback(tx, results) {
+        var htmlCode = "";
+        var totalWishes = results.rows.length;
+
+        for (var i = 0; i < results.rows.length; i++) {
+            var row = results.rows[i];
+
+            var imgURL = "data:image/png;base64," + row['image'];
+
+            htmlCode += "<div class='col-md-6'>" +
+                "<figure class='itemside mb-4'>" +
+                "<div class='aside'>" +
+                "<img src='" + imgURL + "' class='border img-md'>" +
+                "</div>" +
+                "<figcaption class='info'>" +
+                "<a href='#' class='title'>" + row['name'] + "</a>" +
+                "<p class='price mb-2'>" + row['price'] + "</p>" +
+                "<a href='#' class='btn btn-secondary btn-sm' onclick='SaveOrder(" + row['id'] + ")'>" + "Add to cart" + "</a>" + "&nbsp;" +
+                "<a href='#' class='btn btn-danger btn-sm' onclick='DeleteWish(" + row['id'] + ")'>" +
+                "<span>" + "Remove from wishlist" + "</span>" +
+                "</a>" +
+                "</figcaption>" +
+                "</figure>" +
+                "</div>";
+        }
+
+        var total = $("#totalWishes");
+        total = total.html(totalWishes);
+
+        var wishlist = $("#wishlist");
+        wishlist = wishlist.html(htmlCode);
+    }
+
+    SaveWishlist.selectAll(callback);
+}
+
+function DeleteWish(id) {
+
+    console.info("Delete order method");
+
+    var options = [id];
+    console.info(id);
+
+    SaveWishlist.productDelete(options);
 }

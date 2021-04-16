@@ -546,3 +546,68 @@ var SaveOrderInfo = {
         db.transaction(txFunction, errorHandler, successTransaction);
     }
 };
+
+var SaveWishlist = {
+
+    productInsert: function(options) {
+        function successInsertTransaction() {
+            console.info("Success: Insert to Wish List Transaction successful");
+        }
+
+        function successInsert() {
+            console.info("Success: Insert to wish list successful");
+            alert("Saving product to wish list has been successful");
+        }
+
+        function txFunction(tx) {
+            var sql = "";
+            console.info("Start inserting a product into wish list table");
+            sql = "INSERT INTO wishList(supplierId, image, name, price, description) VALUES(?,?,?,?,?);";
+            tx.executeSql(sql, options, successInsert, errorHandler);
+
+            console.info("product added to wish list added");
+        }
+
+        db.transaction(txFunction, errorHandler, successInsertTransaction);
+    },
+
+    selectAll: function(callback) {
+        var options = [];
+
+        function successTransaction() {
+            console.info("Success: Select all wish list Transaction successful");
+        }
+
+        function txFunction(tx) {
+            console.info("Selecting all wish list...");
+
+            var sql = "SELECT * FROM wishList;";
+            tx.executeSql(sql, options, callback, errorHandler);
+        }
+
+        db.transaction(txFunction, errorHandler, successTransaction);
+    },
+
+    productDelete: function(options) {
+        function successTransaction() {
+            console.info("Success: Transaction successful");
+        }
+
+        function successDelete() {
+            console.info("Success: Delete product successful");
+            alert("Product deleted successfully");
+
+            window.location.reload();
+        }
+
+        function txFunction(tx) {
+            console.info("Deleting from wishList...  ");
+            var sql = "";
+            sql = "DELETE FROM wishList " +
+                "WHERE id=?;";
+            tx.executeSql(sql, options, successDelete, errorHandler);
+        }
+
+        db.transaction(txFunction, errorHandler, successTransaction);
+    }
+};

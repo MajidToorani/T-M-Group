@@ -74,7 +74,7 @@
             }
         }
         // jquery ready start
-        $(document).ready(function() {
+        $(document).ready(function () {
             // jQuery code
             if (localStorage.getItem("firstName") !== null) {
                 $(".userProfile").text(localStorage.getItem("firstName"));
@@ -120,8 +120,8 @@
                                 <input type="text" class="form-control" placeholder="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
-										<i class="fa fa-search"></i> Search
-									</button>
+                                        <i class="fa fa-search"></i> Search
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -132,12 +132,12 @@
                         <div class="widgets-wrap float-md-right">
                             <div class="widget-header  mr-3" id="hideCart">
                                 <a href="page-shopping-cart.html" class="icon icon-sm rounded-circle border"><i
-										class="fa fa-shopping-cart"></i></a>
+                                        class="fa fa-shopping-cart"></i></a>
                                 <span class="badge badge-pill badge-danger notify" id="ordersNumber">0</span>
                             </div>
                             <div class="widget-header icontext">
-                                <a href="page-profile-main.html" class="icon icon-sm rounded-circle border" id="userProfile"><i
-										class="fa fa-user"></i></a>
+                                <a href="page-profile-main.html" class="icon icon-sm rounded-circle border"
+                                    id="userProfile"><i class="fa fa-user"></i></a>
                                 <div class="text">
                                     <span class="text-muted">Welcome!</span>
                                     <span class="userProfile"></span>
@@ -168,9 +168,10 @@
     <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
         <div class="container">
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
+                aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="main_nav">
                 <ul class="navbar-nav">
@@ -246,50 +247,10 @@
 
                     <article class="card">
                         <div class="card-body">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <figure class="itemside mb-4">
-                                        <div class="aside"><img src="images/items/1.jpg" class="border img-md"></div>
-                                        <figcaption class="info">
-                                            <a href="#" class="title">Great product name goes here</a>
-                                            <p class="price mb-2">$80</p>
-                                            <a href="#" class="btn btn-secondary btn-sm"> Add to cart </a>
-                                            <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" title="" data-original-title="Remove from wishlist"> <i class="fa fa-times"></i>
-                                            </a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <!-- col.// -->
-
-                                <div class="col-md-6">
-                                    <figure class="itemside mb-4">
-                                        <div class="aside"><img src="images/items/2.jpg" class="border img-md"></div>
-                                        <figcaption class="info">
-                                            <a href="#" class="title">Men's Jackeet for Winter </a>
-                                            <p class="price mb-2">$1280</p>
-                                            <a href="#" class="btn btn-secondary btn-sm"> Add to cart </a>
-                                            <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" title="" data-original-title="Remove from wishlist"> <i class="fa fa-times"></i>
-                                            </a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <!-- col.// -->
-
-                                <div class="col-md-6">
-                                    <figure class="itemside mb-4">
-                                        <div class="aside"><img src="images/items/3.jpg" class="border img-md"></div>
-                                        <figcaption class="info">
-                                            <a href="#" class="title">Another book of item goes here </a>
-                                            <p class="price mb-2">$280</p>
-                                            <a href="#" class="btn btn-secondary btn-sm"> Add to cart </a>
-                                            <a href="#" class="btn btn-danger btn-sm" data-toggle="tooltip" title="" data-original-title="Remove from wishlist"> <i class="fa fa-times"></i>
-                                            </a>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <!-- col.// -->
+                            <div>
+                                <h4 class="title-page">Wish List</h4>
                             </div>
+                            <div class="row" id="wishlist"></div>
                             <!-- row .//  -->
 
                         </div>
