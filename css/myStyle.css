@@ -1,6 +1,4 @@
-
-
-label.error{
+label.error {
     color: #F00;
 }
 
@@ -8,4 +6,8 @@ input.error,
 select.error,
 textarea.error {
     border: 1px red solid;
+}
+
+.hidden {
+    visibility: hidden;
 }

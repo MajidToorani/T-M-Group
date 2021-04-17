@@ -37,7 +37,6 @@
     <script src="js/util.js" type="text/javascript"></script>
     <script src="js/global.js" type="text/javascript"></script>
 
-
     <script type="text/javascript">
         /// some script
         function clearLocalStorage() {
@@ -79,7 +78,7 @@
             SaveOrder(id);
         }
 
-        function btnAddToWishList_click(){
+        function btnAddToWishList_click() {
             var id = localStorage.getItem("productId");
             SaveToWishlist(id);
         }
@@ -114,16 +113,15 @@
             document.getElementById("pImage2").src = imgURL;
             document.getElementById("pImage3").src = imgURL;
             document.getElementById("pImage4").src = imgURL;
-            //$("#categoryId").text(categoryId);
+
             $("#manId").text(localStorage.getItem("manufacturerId"));
             $("#pName").text(localStorage.getItem("name"));
             $("#pPrice").text(localStorage.getItem("price"));
-            //$("#category").text(category);
             $("#pDescription").text(localStorage.getItem("description"));
 
             $(".btn-outline-primary").on("click", btnAddToCart_click);
             $("#addToWishlist").on("click", btnAddToWishList_click);
-            
+
         });
         // jquery end
     </script>
@@ -192,7 +190,6 @@
     </header>
     <!-- section-header.// -->
 
-
     <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
         <div class="container">
 
@@ -222,17 +219,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="page-contact.html">CONTACT US</a>
                     </li>
-                    <!--li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> More</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Foods and Drink</a>
-							<a class="dropdown-item" href="#">Home interior</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Category 1</a>
-							<a class="dropdown-item" href="#">Category 2</a>
-							<a class="dropdown-item" href="#">Category 3</a>
-						</div>
-					</li-->
                 </ul>
             </div>
             <!-- collapse .// -->
@@ -299,9 +285,6 @@
                                 <dt class="col-sm-3">Color</dt>
                                 <dd class="col-sm-9">This color</dd>
 
-                                <!-- <dt class="col-sm-3">Manufacturer</dt>
-                                <dd class="col-sm-9" id="manId"></dd> -->
-
                                 <dt class="col-sm-3">Delivery</dt>
                                 <dd class="col-sm-9">Canada, USA, and Europe </dd>
                             </dl>
@@ -346,12 +329,11 @@
                                 <!-- col.// -->
                             </div>
                             <!-- row.// -->
-                            <!-- <a href="#" class="btn  btn-primary"> Buy now </a> -->
                             <a href="#" class="btn btn-light" id="addToWishlist"><i class="fa fa-heart"></i> 
                                 <span class="text">Add to Wish List</span>
                             </a>&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="#" class="btn  btn-outline-primary">
-                                 <span class="text">Add to cart</span><i class="fas fa-shopping-cart "></i>
+                                <span class="text">Add to cart</span><i class="fas fa-shopping-cart "></i>
                             </a>
                         </article>
                         <!-- product-info-aside .// -->
@@ -414,7 +396,6 @@
         <!-- container .//  -->
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
-
 
     <!-- ========================= FOOTER ========================= -->
     <footer class="section-footer border-top padding-y">

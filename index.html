@@ -160,9 +160,8 @@
             <!-- container.// -->
         </section>
         <!-- header-main .// -->
-        <!--/header-->
-        <!-- section-header.// -->
 
+        <!-- section-header.// -->
 
         <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
             <div class="container">
@@ -178,11 +177,9 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link hideShop" href="page-categories.html">SHOP BY CATEGORY</a>
-                            <!-- <div class="dropdown-menu" id="categoryList"></div>  -->
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link hideShop" href="page-manufacturers.html">SHOP BY MANUFACTURER</a>
-                            <!-- <div class="dropdown-menu"  data-toggle="dropdown" id="manufacturerList"></div> -->
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="page-pricing.html">PRICING</a>
@@ -193,17 +190,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="page-contact.html">CONTACT US</a>
                         </li>
-                        <!--li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"> More</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Foods and Drink</a>
-							<a class="dropdown-item" href="#">Home interior</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Category 1</a>
-							<a class="dropdown-item" href="#">Category 2</a>
-							<a class="dropdown-item" href="#">Category 3</a>
-						</div>
-					</li-->
                     </ul>
                 </div>
                 <!-- collapse .// -->
@@ -214,7 +200,6 @@
     </header>
     <!-- section-header.// -->
 
-
     <!-- ========================= SECTION MAIN ========================= -->
     <section class="section-main bg padding-y">
         <div class="container">
@@ -222,16 +207,7 @@
             <div class="row">
                 <aside class="col-md-3">
                     <nav class="card">
-                        <ul class="menu-category" id="categoryMenu">
-                            <!--li class="has-submenu"><a href="#">Clothes</a>
-								<ul class="submenu">
-									<li><a href="#">Women's</a></li>
-									<li><a href="#">Men's</a></li>
-									<li><a href="#">Kid's</a></li>
-									<li><a href="#">Some others</a></li>
-								</ul>
-							</li-->
-                        </ul>
+                        <ul class="menu-category" id="categoryMenu"></ul>
                     </nav>
                 </aside>
                 <!-- col.// -->
@@ -273,7 +249,6 @@
                             </a>
                         </div>
                         <!-- ==================  COMPONENT SLIDER BOOTSTRAP end.// ==================  .// -->
-                        <!--img src="images/banners/tm-banner1.png" class="w-100 rounded"-->
                     </article>
                 </div>
                 <!-- col.// -->
@@ -294,7 +269,6 @@
             </header>
             <!-- sect-heading -->
 
-
             <div class="row" id="popularProduct"></div>
             <!-- row.// -->
 
@@ -314,8 +288,8 @@
                     <p>Place for brands or manufacturers' logo</p>
                 </div>
                 <div class="col-md-6 text-md-right">
-                    <!--a href="#"><img src="images/misc/appstore.png" height="40"></a>
-					<a href="#"><img src="images/misc/appstore.png" height="40"></a-->
+                    <a href="#"><img src="images/misc/appstore.png" height="40"></a>
+                    <a href="#"><img src="images/misc/playmarket.png" height="40"></a>
                 </div>
             </div>
             <!-- row.// -->
@@ -343,46 +317,44 @@
                     <aside class="col-md col-6">
                         <h6 class="title">Company</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="#">About us</a></li>
-                            <li> <a href="#">Career</a></li>
-                            <li> <a href="#">Find a store</a></li>
-                            <li> <a href="#">Rules and terms</a></li>
-                            <li> <a href="#">Sitemap</a></li>
+                            <li> <a href="page-about.html">About us</a></li>
+                            <li> <a href="page-shopping-cart.html">Rules and terms</a></li>
+                            <li> <a href="page-pricing.html">Pricing nd Subscription</a></li>
+                            <li> <a href="index.html">Sitemap</a></li>
                         </ul>
                     </aside>
                     <aside class="col-md col-6">
                         <h6 class="title">Help</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="#">Contact us</a></li>
-                            <li> <a href="#">Money refund</a></li>
-                            <li> <a href="#">Order status</a></li>
-                            <li> <a href="#">Shipping info</a></li>
-                            <li> <a href="#">Open dispute</a></li>
+                            <li> <a href="page-contact.html">Contact us</a></li>
+                            <li> <a href="page-shopping-cart.html">Money refund</a></li>
+                            <li> <a href="page-profile-orders.html">Order status</a></li>
+                            <li> <a href="page-profile-address.html">Shipping info</a></li>
                         </ul>
                     </aside>
                     <aside class="col-md col-6">
                         <h6 class="title">Account</h6>
                         <ul class="list-unstyled">
-                            <li> <a href="#"> User Login </a></li>
-                            <li> <a href="#"> User register </a></li>
-                            <li> <a href="#"> Account Setting </a></li>
-                            <li> <a href="#"> My Orders </a></li>
+                            <li> <a href="#" onclick="selectYourLoginType()"> User Login </a></li>
+                            <li> <a href="#" onclick="selectYourRegisterType()"> User register </a></li>
+                            <li> <a href="page-profile-setting.html"> Account Setting </a></li>
+                            <li> <a href="page-profile-orders.html"> My Orders </a></li>
                         </ul>
                     </aside>
                     <aside class="col-md">
                         <h6 class="title">Social</h6>
                         <ul class="list-unstyled">
                             <li>
-                                <a href="#"> <i class="fab fa-facebook"></i> Facebook </a>
+                                <a href="https://www.facebook.com"> <i class="fab fa-facebook"></i> Facebook </a>
                             </li>
                             <li>
-                                <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+                                <a href="https://twitter.com/"> <i class="fab fa-twitter"></i> Twitter </a>
                             </li>
                             <li>
-                                <a href="#"> <i class="fab fa-instagram"></i> Instagram </a>
+                                <a href="https://www.instagram.com/"> <i class="fab fa-instagram"></i> Instagram </a>
                             </li>
                             <li>
-                                <a href="#"> <i class="fab fa-youtube"></i> YouTube </a>
+                                <a href="https://www.youtube.com/"> <i class="fab fa-youtube"></i> YouTube </a>
                             </li>
                         </ul>
                     </aside>
