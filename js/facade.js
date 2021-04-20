@@ -491,7 +491,7 @@ function AllManufacturers() {
             htmlCode += "<div class='col-md-3'>" +
                 "<div class='card card-category'>" +
                 "<div class='img-wrap' style='background: #ffd7d7'>" +
-                "<img src='images/manufacturers/electrolux.png'>" +
+                "<img src='images/manufacturers/" + row['id'] + ".jpg'>" +
                 "</div>" +
                 "<div class='card-body'>" +
                 "<h4 class='card-title'>" + "<a class='manufacturerName' href='#' onclick='UpdateManufacturerProductList(" + row['id'] + ")'>" + row['companyName'] + "</a>" + "</h4>" +
