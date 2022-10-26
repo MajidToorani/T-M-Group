@@ -28,4 +28,4 @@ Shop by manufacturer
 And in the future, we want to add the payment, track order and shipping to this website.
 
 
-Drop shippingDrop shipping is a form of retail business wherein the seller accepts customer orders but does not keep goods sold in stock. Instead, in a form of supply chain management, it transfers the orders and their...en.wikipedia.org
+Drop shipping is a form of retail business wherein the seller accepts customer orders but does not keep goods sold in stock. Instead, in a form of supply chain management, it transfers the orders and their...en.wikipedia.org
