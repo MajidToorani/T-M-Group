@@ -300,28 +300,28 @@ function UpdateProductList(categoryId) {
     var categoryName = "";
     switch (categoryId) {
         case 1:
-            categoryName = "Appliances";
+            categoryName = "Appliance";
             break;
         case 2:
-            categoryName = "Autoparts";
+            categoryName = "Autopart";
             break;
         case 3:
             categoryName = "Furniture";
             break;
         case 4:
-            categoryName = "Electronics";
+            categoryName = "Electronic";
             break;
         case 5:
-            categoryName = "Jewelries";
+            categoryName = "Jewelry";
             break;
         case 6:
-            categoryName = "Beauties";
+            categoryName = "Beauty Supply";
             break;
         case 7:
-            categoryName = "Clothes";
+            categoryName = "Cloth";
             break;
         case 8:
-            categoryName = "Books";
+            categoryName = "Book";
             break;
         default:
             break;
@@ -1185,4 +1185,4 @@ function DeleteWish(id) {
     console.info(id);
 
     SaveWishlist.productDelete(options);
-}
+}auto
