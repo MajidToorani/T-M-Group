@@ -1,4 +1,4 @@
-# T&M Group
+# T&M Holding Groups
 Capstone Project
     
 Wikipedia defines drop shipping as, “a supply chain management technique in which the retailer does not keep goods in stock, but instead transfers customer orders and shipment details to either the manufacturer or a wholesaler, who then ships the goods directly”.
@@ -28,4 +28,4 @@ Shop by manufacturer
 And in the future, we want to add the payment, track order and shipping to this website.
 
 
-Drop shippingDrop shipping is a form of retail business wherein the seller accepts customer orders but does not keep goods sold in stock. Instead, in a form of supply chain management, it transfers the orders and their...en.wikipedia.org
+Drop shipping is a form of retail business wherein the seller accepts customer orders but does not keep goods sold in stock. Instead, in a form of supply chain management, it transfers the orders and their...en.wikipedia.org
