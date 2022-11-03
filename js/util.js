@@ -394,7 +394,8 @@ function DoValidate_frmUpdateProduct() {
 
 jQuery.validator.addMethod("emailAddCheck",
     function(value, element) {
-        var regex = /^[^@]+@[^@]+\.[^@]+$/;
+        //var regex =/^[^@]+@[^@]+\.[^@]+$/;
+        var regex =/^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*$/;
         return this.optional(element) || regex.test(value);
     },
     "Email is not valid");
@@ -404,4 +405,4 @@ jQuery.validator.addMethod("phoneAddCheck",
         var regex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
         return this.optional(element) || regex.test(value);
     },
-    "Phone is not valid");
+    "Phone is not valid");auto
