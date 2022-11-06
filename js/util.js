@@ -122,7 +122,7 @@ function DoValidate_frmManufacturer() {
                 rangelength: [2, 20]
             },
             companyUrl: {
-                url: true
+                required: true
             },
             bnNumber: {
                 required: true
@@ -179,7 +179,7 @@ function DoValidate_frmManufacturer() {
                 required: "company name is required"
             },
             companyUrl: {
-                url: "Please enter a valid url"
+                required: "Please enter a valid url"
             },
             bnNumber: {
                 required: "Business number is required"
