@@ -221,4 +221,4 @@ var DB = {
 
         db.transaction(txFunction, errorHandler, successTransaction);
     }
-};auto
+};
