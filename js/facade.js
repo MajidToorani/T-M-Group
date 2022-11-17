@@ -1185,4 +1185,4 @@ function DeleteWish(id) {
     console.info(id);
 
     SaveWishlist.productDelete(options);
-}auto
+}
