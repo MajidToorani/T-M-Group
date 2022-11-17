@@ -405,4 +405,4 @@ jQuery.validator.addMethod("phoneAddCheck",
         var regex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
         return this.optional(element) || regex.test(value);
     },
-    "Phone is not valid");auto
+    "Phone is not valid");
