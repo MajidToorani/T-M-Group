@@ -28,7 +28,8 @@ function DoValidate_frmAdd() {
                 required: true
             },
             password: {
-                required: true
+                required: true,
+                passwordCheck: true
             },
             confirmPassword: {
                 required: true,
@@ -62,7 +63,8 @@ function DoValidate_frmAdd() {
                 required: "address is required"
             },
             password: {
-                required: "Enter password"
+                required: "Enter password",
+                passwordCheck: "Please strengthen your password"
             },
             confirmPassword: {
                 required: "Confirm password",
@@ -156,7 +158,8 @@ function DoValidate_frmManufacturer() {
                 required: true
             },
             cPassword: {
-                required: true
+                required: true,
+                passwordCheck: true
             },
             confirmPassword: {
                 required: true,
@@ -211,7 +214,8 @@ function DoValidate_frmManufacturer() {
                 required: "postal/zip code is required"
             },
             cPassword: {
-                required: "Enter password"
+                required: "Enter password",
+                passwordCheck: "Please strengthen your password"
             },
             confirmPassword: {
                 required: "Confirm password",
@@ -279,7 +283,8 @@ function DoValidate_frmUpdateSetting() {
                 rangelength: [1, 20]
             },
             password: {
-                required: true
+                required: true,
+                passwordCheck: true
             },
             confirmPassword: {
                 required: true,
@@ -307,7 +312,8 @@ function DoValidate_frmUpdateSetting() {
                 required: "city is required"
             },
             password: {
-                required: "Enter password"
+                required: "Enter password",
+                passwordCheck: "Please strengthen your password"
             },
             confirmPassword: {
                 required: "Confirm password",
@@ -406,3 +412,10 @@ jQuery.validator.addMethod("phoneAddCheck",
         return this.optional(element) || regex.test(value);
     },
     "Phone is not valid");
+
+jQuery.validator.addMethod("passwordCheck",
+    function(value, element) {
+        var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; //Minimum eight characters, at least one letter and one number:
+        return this.optional(element) || regex.test(value);
+    },
+    "Minimum eight characters, at least one letter and one number, please strengthen your password");
