@@ -64,7 +64,7 @@ function DoValidate_frmAdd() {
             },
             password: {
                 required: "Enter password",
-                passwordCheck: "Please strengthen your password"
+                passwordCheck: "Please strengthen your password, Minimum eight characters, at least one letter and one number"
             },
             confirmPassword: {
                 required: "Confirm password",
@@ -215,7 +215,7 @@ function DoValidate_frmManufacturer() {
             },
             cPassword: {
                 required: "Enter password",
-                passwordCheck: "Please strengthen your password"
+                passwordCheck: "Please strengthen your password, Minimum eight characters, at least one letter and one number"
             },
             confirmPassword: {
                 required: "Confirm password",
@@ -313,7 +313,7 @@ function DoValidate_frmUpdateSetting() {
             },
             password: {
                 required: "Enter password",
-                passwordCheck: "Please strengthen your password"
+                passwordCheck: "Please strengthen your password, Minimum eight characters, at least one letter and one number"
             },
             confirmPassword: {
                 required: "Confirm password",
