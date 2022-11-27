@@ -300,16 +300,16 @@ function UpdateProductList(categoryId) {
     var categoryName = "";
     switch (categoryId) {
         case 1:
-            categoryName = "Appliance";
+            categoryName = "Appliances";
             break;
         case 2:
-            categoryName = "Autopart";
+            categoryName = "Autoparts";
             break;
         case 3:
             categoryName = "Furniture";
             break;
         case 4:
-            categoryName = "Electronic";
+            categoryName = "Electronics";
             break;
         case 5:
             categoryName = "Jewelry";
@@ -318,10 +318,10 @@ function UpdateProductList(categoryId) {
             categoryName = "Beauty Supply";
             break;
         case 7:
-            categoryName = "Cloth";
+            categoryName = "Clothes";
             break;
         case 8:
-            categoryName = "Book";
+            categoryName = "Books";
             break;
         default:
             break;

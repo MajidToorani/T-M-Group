@@ -163,14 +163,14 @@ var DB = {
             tx.executeSql(sqlCategory, options, successCreate, errorHandler);
 
             console.info("Inserting data to Table categories...");
-            var sqlInsertCategories = ["INSERT INTO categories(name, description) VALUES('Appliance', 'fridge-stove-dishwasher');",
-                " INSERT INTO categories(name, description) VALUES('Autopart', 'vehicles accessories');",
+            var sqlInsertCategories = ["INSERT INTO categories(name, description) VALUES('Appliances', 'fridge-stove-dishwasher');",
+                " INSERT INTO categories(name, description) VALUES('Autoparts', 'vehicles accessories');",
                 " INSERT INTO categories(name, description) VALUES('Furniture', 'sofa-chair-dining tables-beds');",
-                " INSERT INTO categories(name, description) VALUES('Electronic', 'cables-lights');",
+                " INSERT INTO categories(name, description) VALUES('Electronics', 'cables-lights');",
                 " INSERT INTO categories(name, description) VALUES('Jewelry', 'neckless-earing-bracelet');",
                 " INSERT INTO categories(name, description) VALUES('Beauty Supply', 'makeup-skin care');",
-                " INSERT INTO categories(name, description) VALUES('Cloth', 'shirts-pants-jeans-coats');",
-                " INSERT INTO categories(name, description) VALUES('Book', 'Action and Adventure-Classics-Comic or Garphic Novel-Historical Fiction-Horror');"
+                " INSERT INTO categories(name, description) VALUES('Clothes', 'shirts-pants-jeans-coats');",
+                " INSERT INTO categories(name, description) VALUES('Books', 'Action and Adventure-Classics-Comic or Garphic Novel-Historical Fiction-Horror');"
             ];
 
             for (var i = 0; i < sqlInsertCategories.length; i++) {
