@@ -1003,7 +1003,7 @@ function UpdateMyOrders() {
                 var imgURL = "data:image/jpeg;base64," + row['image'];
 
                 htmlTable += "<tr>" +
-                    "<td width='90'>" + "<img src='" + imgURL + "'>" + "</td>" +
+                    "<td width='90'>" +"<div class='img-wrap'>" + "<img src='" + imgURL + "'>" + "</div>" + "</td>" +
                     "<td>" + "<p class='title mb-0'>" + "Name: " + row['name'] + "</p>" + "</td>" +
                     "<td>" + "<p class='title mb-0'>" + "Quantity: " + row['quantity'] + "<span class='text-muted'>" + " - pcs" + "</span>" + "</p>" + "</td>" +
                     "<td>" + "<var class='title mb-0'>" + "Price: " + "$" + row['price'] + "</var>" + "<span class='text-muted'>" + "/per item" + "</span>" + "</td>" +
