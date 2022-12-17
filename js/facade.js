@@ -268,7 +268,7 @@ function SaveProduct() {
         var manufacturerId = localStorage.getItem("manufacturerId");
 
         var productImage = document.getElementById('myImage');
-        var image = getBase64Image(productImage, 2048, 2048, 1);
+        var image = getBase64Image(productImage, 1024, 1024, 0.75);
 
         /*function getBase64Image(img) {
             var canvas = document.createElement("canvas");
