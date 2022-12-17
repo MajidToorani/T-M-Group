@@ -267,10 +267,10 @@ function SaveProduct() {
 
         var manufacturerId = localStorage.getItem("manufacturerId");
 
-        /*var productImage = document.getElementById('myImage');
-        var image = getBase64Image(productImage);
+        var productImage = document.getElementById('myImage');
+        var image = getBase64Image(productImage, 256, 256, 1);
 
-        function getBase64Image(img) {
+        /*function getBase64Image(img) {
             var canvas = document.createElement("canvas");
             canvas.width = img.width;
             canvas.height = img.height;
@@ -283,60 +283,31 @@ function SaveProduct() {
             return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
         }*/
 
-        //new cod
-        var productImage = document.getElementById('myImage');
-        var image = getBase64Image(productImage);
-
-        function getBase64Image(img) {
+        //new code
+        function getBase64Image(img, width, height, quality) {
+            // Create a canvas element
             var canvas = document.createElement("canvas");
-            canvas.width = img.width;
-            canvas.height = img.height;
+            canvas.width = width;
+            canvas.height = height;
 
+            // Get the 2D rendering context from the canvas
             var ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, img.width, img.height);
 
-            var dataURL = canvas.toDataURL("image/png");
+            // Draw the input image onto the canvas
+            ctx.drawImage(img, 0, 0, width, height);
 
-            return dataURL;
+            // Get the base64 encoded string representation of the image
+            var dataURL = canvas.toDataURL("image/jpeg", quality);
+
+            // Return the base64 encoded string, stripping off the header information
+            return dataURL.replace(/^data:image\/(jpeg|jpg);base64,/, "");
         }
+        //new code
 
         var name = $("#productName").val();
         var price = $("#productPrice").val();
         var categoryId = $("#category option:selected").val();
         var description = $("#description").val();
-
-        // Create a new FormData object
-        var formData = new FormData();
-
-        // Create a file blob from the data URL
-        var blob = dataURLToBlob(image);
-
-        // Add the file to the form data
-        formData.append('image', blob, 'image.png');
-
-        // Add any other data you want to send to the server
-        formData.append('name', $("#productName").val());
-        formData.append('price', $("#productPrice").val());
-        formData.append('categoryId', $("#category option:selected").val());
-        formData.append('description', $("#description").val());
-
-        // Send the form data to the server using an XMLHttpRequest
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/upload', true);
-        xhr.send(formData);
-
-        function dataURLToBlob(dataURL) {
-            var parts = dataURL.split(';base64,');
-            var contentType = parts[0].split(':')[1];
-            var raw = window.atob(parts[1]);
-            var rawLength = raw.length;
-            var uInt8Array = new Uint8Array(rawLength);
-            for (var i = 0; i < rawLength; ++i) {
-                uInt8Array[i] = raw.charCodeAt(i);
-            }
-            return new Blob([uInt8Array], { type: contentType });
-        }
-        // new code
 
         var options = [];
         options = [manufacturerId, categoryId, image, name, price, description];
