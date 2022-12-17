@@ -110,7 +110,7 @@
                 $('#hideCart').hide();
             }
 
-            var imgURL = "data:image/png;base64," + localStorage.getItem("image");
+            var imgURL = "data:image/jpeg;base64," + localStorage.getItem("image");
             document.getElementById("updateImage").src = imgURL;
             $("#updateName").val(localStorage.getItem("name"));
             $("#updatePrice").val(localStorage.getItem("price"));
