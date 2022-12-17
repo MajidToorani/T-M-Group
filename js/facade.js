@@ -268,7 +268,7 @@ function SaveProduct() {
         var manufacturerId = localStorage.getItem("manufacturerId");
 
         var productImage = document.getElementById('myImage');
-        var image = getBase64Image(productImage, 128, 128, 1);
+        var image = getBase64Image(productImage, 1024, 1024, 1);
 
         /*function getBase64Image(img) {
             var canvas = document.createElement("canvas");
@@ -732,7 +732,7 @@ function UpdateProduct() {
         var categoryId = $("#category option:selected").val();
 
         var productImage = document.getElementById("updateImage");
-        var image = getBase64Image(productImage, 128, 128, 1);
+        var image = getBase64Image(productImage, 1024, 1024, 1);
 
         function getBase64Image(img, width, height, quality) {
             var canvas = document.createElement("canvas");
