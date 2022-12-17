@@ -268,7 +268,7 @@ function SaveProduct() {
         var manufacturerId = localStorage.getItem("manufacturerId");
 
         var productImage = document.getElementById('myImage');
-        var image = getBase64Image(productImage, 256, 256, 1);
+        var image = getBase64Image(productImage, 128, 128, 1);
 
         /*function getBase64Image(img) {
             var canvas = document.createElement("canvas");
@@ -363,7 +363,7 @@ function UpdateProductList(categoryId) {
         for (var i = 0; i < results.rows.length; i++) {
             var row = results.rows[i];
 
-            var imgURL = "data:image/png;base64," + row['image'];
+            var imgURL = "data:image/jpeg;base64," + row['image'];
 
             htmlCode += "<div class='col-md-4'>" +
                 "<figure class='card card-product-grid'>" +
@@ -409,7 +409,7 @@ function UpdatePopularProduct() {
         for (var i = 0; i < results.rows.length; i++) {
             var row = results.rows[i];
 
-            var imgURL = "data:image/png;base64," + row['image'];
+            var imgURL = "data:image/jpeg;base64," + row['image'];
 
             htmlCode += "<div class='col-md-3'>" +
                 "<div href='#' class='card card-product-grid'>" +
@@ -547,7 +547,7 @@ function UpdateManufacturerProductList(manufacturerId) {
 
             itemsNumber = results.rows.length;
 
-            var imgURL = "data:image/png;base64," + row['image'];
+            var imgURL = "data:image/jpeg;base64," + row['image'];
 
             htmlCode += "<div class='col-md-4'>" +
                 "<figure class='card card-product-grid'>" +
@@ -600,7 +600,7 @@ function UpdateManufacturerSellingItems() {
 
             itemsNumber = results.rows.length;
 
-            var imgURL = "data:image/png;base64," + row['image'];
+            var imgURL = "data:image/jpeg;base64," + row['image'];
 
             htmlCode += "<div class='col-md-4'>" +
                 "<figure class='card card-product-grid'>" +
@@ -645,7 +645,7 @@ function UpdateRecentProducts() {
                 for (var i = 0; i < results.rows.length; i++) {
                     var row = results.rows[i];
 
-                    var imgURL = "data:image/png;base64," + row['image'];
+                    var imgURL = "data:image/jpeg;base64," + row['image'];
 
                     htmlCode += "<div class='col-md-3'>" +
                         "<div href='#' class='card card-product-grid'>" +
@@ -665,7 +665,7 @@ function UpdateRecentProducts() {
                 for (var i = results.rows.length - 1; i > results.rows.length - 5; i--) {
                     var row = results.rows[i];
 
-                    var imgURL = "data:image/png;base64," + row['image'];
+                    var imgURL = "data:image/jpeg;base64," + row['image'];
 
                     htmlCode += "<div class='col-md-3'>" +
                         "<div href='#' class='card card-product-grid'>" +
@@ -732,19 +732,19 @@ function UpdateProduct() {
         var categoryId = $("#category option:selected").val();
 
         var productImage = document.getElementById("updateImage");
-        var image = getBase64Image(productImage);
+        var image = getBase64Image(productImage, 128, 128, 1);
 
-        function getBase64Image(img) {
+        function getBase64Image(img, width, height, quality) {
             var canvas = document.createElement("canvas");
-            canvas.width = img.width;
-            canvas.height = img.height;
+            canvas.width = width;
+            canvas.height = height;
 
             var ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, img.width, img.height);
+            ctx.drawImage(img, 0, 0, width, height);
 
-            var dataURL = canvas.toDataURL("image/png");
+            var dataURL = canvas.toDataURL("image/jpeg", quality);
 
-            return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+            return dataURL.replace(/^data:image\/(jpeg|jpg);base64,/, "");
         }
 
         var name = $("#updateName").val();
@@ -899,7 +899,7 @@ function UpdateRecentOrders() {
                 for (var i = results.rows.length - 1; i > results.rows.length - 5; i--) {
                     var row = results.rows[i];
 
-                    var imgURL = "data:image/png;base64," + row['image'];
+                    var imgURL = "data:image/jpeg;base64," + row['image'];
 
                     htmlCode += "<div class='col-md-3'>" +
                         "<div href='#' class='card card-product-grid'>" +
@@ -1169,7 +1169,7 @@ function UpdateWishList() {
         for (var i = 0; i < results.rows.length; i++) {
             var row = results.rows[i];
 
-            var imgURL = "data:image/png;base64," + row['image'];
+            var imgURL = "data:image/jpeg;base64," + row['image'];
 
             htmlCode += "<div class='col-md-6'>" +
                 "<figure class='itemside mb-4'>" +
