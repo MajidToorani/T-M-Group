@@ -1000,7 +1000,7 @@ function UpdateMyOrders() {
 
                 ordersNum += row['quantity'];
 
-                var imgURL = "data:image/png;base64," + row['image'];
+                var imgURL = "data:image/jpeg;base64," + row['image'];
 
                 htmlTable += "<tr>" +
                     "<td width='90'>" + "<img src='" + imgURL + "'>" + "</td>" +
