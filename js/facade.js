@@ -981,6 +981,7 @@ function UpdateMyOrders() {
             var htmlTable = "<tbody>";
             var subTotal = 0;
             var finalTotal = 0;
+            var tax = 0;
             var shippingFee = 0;
             var ordersNum = 0;
 
@@ -1052,11 +1053,15 @@ function UpdateMyOrders() {
             var mySubTotal = $("#subTotal");
             mySubTotal = mySubTotal.text("Subtotal: $" + subTotal);
 
+            tax = subTotal * 0.13;
+            var myTax = $("#hstTax");
+            myTax = myTax.text("HST: $" + tax)
+
             shippingFee = subTotal * 0.015;
             var myShippingFee = $("#shippingFee");
             myShippingFee = myShippingFee.text("Shipping fee: $" + shippingFee);
 
-            finalTotal = subTotal + shippingFee;
+            finalTotal = subTotal + tax + shippingFee;
             var myFinalTotal = $("#finalTotal");
             myFinalTotal = myFinalTotal.text("Total: $" + finalTotal);
         }
