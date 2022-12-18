@@ -74,7 +74,7 @@
         }
 
         // jquery ready start
-        $(document).ready(function() {
+        $(document).ready(function () {
             // jQuery code
             if (localStorage.getItem("firstName") !== null) {
                 $(".userProfile").text(localStorage.getItem("firstName"));
@@ -97,6 +97,38 @@
                 $('#hideCart').hide();
             }
         });
+
+
+        function search(term) {
+            var data = [
+                { id: 1, name: "John Smith" },
+                { id: 2, name: "Jane Doe" },
+                { id: 3, name: "Bob Johnson" }
+            ];
+
+            var results = [];
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].name.includes(term)) {
+                    results.push(data[i]);
+                }
+            }
+
+            return results;
+        }
+
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                event.preventDefault(); // prevent the form from submitting
+                var searchTerm = $("#search").val(); // get the value of the search field
+
+                // perform the search using the searchTerm variable
+                var results = search(searchTerm); // assume search() is a function that performs the search and returns the results
+
+                // display the results
+                $("#results").html(results);
+            });
+        });
+
         // jquery end
     </script>
 
@@ -117,7 +149,7 @@
                     <div class="col-lg-6 col-sm-12">
                         <form action="#" class="search">
                             <div class="input-group w-100">
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input type="text" id="search" name="search" class="form-control" placeholder="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
                                         <i class="fa fa-search"></i> Search
@@ -136,7 +168,8 @@
                                 <span class="badge badge-pill badge-danger notify" id="ordersNumber">0</span>
                             </div>
                             <div class="widget-header icontext">
-                                <a href="page-profile-main.html" class="icon icon-sm rounded-circle border" id="userProfile"><i class="fa fa-user"></i></a>
+                                <a href="page-profile-main.html" class="icon icon-sm rounded-circle border"
+                                    id="userProfile"><i class="fa fa-user"></i></a>
                                 <div class="text">
                                     <span class="text-muted">Welcome!</span>
                                     <span class="userProfile"></span>
@@ -166,7 +199,8 @@
         <nav class="navbar navbar-main navbar-expand-lg navbar-light border-bottom">
             <div class="container">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav"
+                    aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -239,11 +273,13 @@
                                     <img class="d-block w-100" src="images/banners/slide5.jpg" alt="Fifth slide">
                                 </div>
                             </div>
-                            <a class="carousel-control-prev" href="#carousel1_indicator" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="#carousel1_indicator" role="button"
+                                data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carousel1_indicator" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="#carousel1_indicator" role="button"
+                                data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -270,6 +306,8 @@
             <!-- sect-heading -->
 
             <div class="row" id="popularProduct"></div>
+
+            <div class="row" id="results"></div>
             <!-- row.// -->
 
         </div>
@@ -365,14 +403,13 @@
 
             <section class="footer-bottom border-top row">
                 <div class="col-md-2 text-md-left">
-                    <span class="px-4"><a
-                            href="mailto:majidtoorani52@yahoo.com">Customer Service</a></span></br>                    
+                    <span class="px-4"><a href="mailto:majidtoorani52@yahoo.com">Customer Service</a></span></br>
                     <span class=""><a href="callto:"></a></span></br>
                     <span class=""></span>
                 </div>
                 <div class="container">
                     <p class="text-center">
-                    &copy 2022 T&M Group. All rights reserved.
+                        &copy 2022 T&M Group. All rights reserved.
                     </p>
                 </div>
                 <div class="col-md-2 text-md-right text-muted">
@@ -388,4 +425,4 @@
 
 </body>
 
-</html>
+</html>autoauto
