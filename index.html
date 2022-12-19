@@ -97,38 +97,6 @@
                 $('#hideCart').hide();
             }
         });
-
-
-        function search(term) {
-            var data = [
-                { id: 1, name: "John Smith" },
-                { id: 2, name: "Jane Doe" },
-                { id: 3, name: "Bob Johnson" }
-            ];
-
-            var results = [];
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].name.includes(term)) {
-                    results.push(data[i]);
-                }
-            }
-
-            return results;
-        }
-
-        $(document).ready(function () {
-            $("form").submit(function (event) {
-                event.preventDefault(); // prevent the form from submitting
-                var searchTerm = $("#search").val(); // get the value of the search field
-
-                // perform the search using the searchTerm variable
-                var results = search(searchTerm); // assume search() is a function that performs the search and returns the results
-
-                // display the results
-                $("#results").html(results);
-            });
-        });
-
         // jquery end
     </script>
 
@@ -147,9 +115,9 @@
                         <!-- brand-wrap.// -->
                     </div>
                     <div class="col-lg-6 col-sm-12">
-                        <form action="/en/search" class="search">
+                        <form action="#" class="search" id="search-form">
                             <div class="input-group w-100">
-                                <input type="text" id="search" name="search" class="form-control" placeholder="Search">
+                                <input type="text" id="search-input" name="search-input" class="form-control" placeholder="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
                                         <i class="fa fa-search"></i> Search
@@ -308,7 +276,7 @@
             <div class="row" id="popularProduct"></div>
 
             <h3 class="section-title">Search results</h3>
-            <div class="row" id="results"></div>
+            <div class="row" id="search-results"></div>
             <!-- row.// -->
 
         </div>
